@@ -1,0 +1,37 @@
+<form autocomplete="off" novalidate="novalidate" class="or clearfix" dir="ltr" id="CascadingSelect"><!--This form was created by transforming a OpenRosa-flavored (X)Form using an XSLT sheet created by Enketo LLC.-->
+<section class="form-logo"/>
+	<h3 dir="auto" id="form-title">Cascading Select Form</h3>
+	<select id="form-languages" data-default-lang="en">
+		<option value="en" data-dir="ltr">english</option>
+		<option value="it" data-dir="ltr">italian</option>
+	</select>
+
+	<fieldset class="question simple-select "><fieldset>
+		<legend/>
+		<div class="option-wrapper">
+			<label class="itemset-template" data-items-path="instance('choices')/counties/county">
+				<input type="radio" name="/form/county" data-name="/form/county" data-type-xml="select1" value=""/>
+			</label>
+			<span class="itemset-labels" data-value-ref="value" data-label-type="itext" data-label-ref="value">
+				<span lang="en" class="option-label active" data-itext-id="king">King County</span>
+				<span lang="it" class="option-label " data-itext-id="king">County King</span>
+				<span lang="en" class="option-label active" data-itext-id="pierce">Pierce County</span>
+				<span lang="it" class="option-label " data-itext-id="pierce">County Pierce</span>
+				</span>
+		</div>
+	</fieldset>
+	<span class="or-constraint-msg active" lang="" data-i18n="constraint.invalid">Value not allowed</span>
+	</fieldset>
+    <fieldset class="question simple-select ">
+    	<fieldset>
+    		<legend/>
+    		<div class="option-wrapper">
+    			<label class="itemset-template" data-items-path="instance('choices')/counties/county[value=/form/county]/cities/city">
+    				<input type="radio" name="/form/city" data-name="/form/city" data-type-xml="select1" value=""/>
+    			</label>
+    			<span class="itemset-labels" data-value-ref="value" data-label-ref="name"/>
+    		</div>
+    	</fieldset>
+    	<span class="or-constraint-msg active" lang="" data-i18n="constraint.invalid">Value not allowed</span>
+    </fieldset>  
+</form>
