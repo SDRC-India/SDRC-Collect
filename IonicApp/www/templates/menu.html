@@ -1,0 +1,14 @@
+<ion-pane>
+  <ion-header-bar class="sdrc-header">
+    <div class="row sdrc-collect-row">
+      <div class="col"><img src="img/sdrcLogo.png" style="width: 50px; heigth: 35px;margin-top: -4px;"></div>
+      <div class="col col-60" style="text-align: center;"><span>{{$root.mainTitle}}</span></div>
+      <div class="col" style="float: right;">
+      <button class="button button-icon sdrc-collect-three-vertical-dot" ng-click="popover.show($event)">
+        <i class="icon ion-android-more-vertical "></i>
+   </button>
+      </div>
+    </div>
+  </ion-header-bar>
+  <ion-nav-view name="menuContent"></ion-nav-view>
+</ion-pane>

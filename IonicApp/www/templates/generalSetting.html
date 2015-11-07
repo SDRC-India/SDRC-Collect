@@ -1,0 +1,32 @@
+<ion-view view-title="General Setting">
+  <ion-content has-bouncing="true" on-swipe-right="$root.swipeRight()">
+    <!-- <h1>General Setting</h1> -->
+    <div class="list">
+	  <a class="item" href="#" onclick="window.open('http://sdrc.co.in', '_system', 'location=yes'); return false;">
+    	<h2>SDRC Collect</h2>
+   		<p>Tap to visit http://sdrc.co.in</p>
+  	  </a>
+	  <div class="item item-divider">
+	    <strong>SERVER SETTING</strong>
+	  </div>
+	  <a class="item" href="#" ng-click="showPlatformPopup()">
+	    <h2>Platform</h2>
+	    <p>ODK Aggregate</p>
+	  </a>
+	  <a class="item" href="#" ng-click="showConfigurePlatformSettingPopup()">
+	    <h2>Configure platform setting</h2>
+	  </a>
+	  <a class="item" href="#" ng-click="showGoogleAccountPopup()">
+	    <h2>Google account</h2>
+	  </a>
+	  <label class="item item-input">
+    	<span class="input-label">Username</span>
+    	<input type="text">
+  	  </label>
+      <label class="item item-input">
+        <span class="input-label">Password</span>
+        <input type="password">
+     </label>
+</div>
+  </ion-content>
+</ion-view>

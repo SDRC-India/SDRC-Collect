@@ -1,0 +1,31 @@
+{
+  "name": "angular-state-machine",
+  "version": "1.2.1",
+  "main": "./dist/angular-state-machine.min.js",
+  "description": "AngularJS service to implement a simple finite state machine.",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tafax/angular-state-machine.git"
+  },
+  "dependencies": {
+    "angular": "*"
+  },
+  "devDependencies": {
+    "angular-mocks": "*"
+  },
+  "ignore": [
+    "node_modules",
+    "components",
+    "lib"
+  ],
+  "homepage": "https://github.com/tafax/angular-state-machine",
+  "_release": "1.2.1",
+  "_resolution": {
+    "type": "version",
+    "tag": "v1.2.1",
+    "commit": "3d027a6a3ba62cdb7ae25ba509cd9b928811e507"
+  },
+  "_source": "git://github.com/tafax/angular-state-machine.git",
+  "_target": "*",
+  "_originalSource": "angular-state-machine"
+}

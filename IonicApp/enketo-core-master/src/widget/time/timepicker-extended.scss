@@ -1,0 +1,35 @@
+/*@import "../../../node_modules/bootstrap-timepicker/css/bootstrap-timepicker";*/
+
+.bootstrap-timepicker {
+    input[type="text"] {
+        display: inline-block;
+        width: $input-min-width;
+    }
+}
+
+.bootstrap-timepicker-widget {
+    &.dropdown-menu {
+        input {
+            width: 50px;
+            margin: 0 auto;
+        }
+    }
+}
+
+.glyphicon {
+    @extend .icon;
+}
+
+.glyphicon-chevron-up {
+    @extend .icon-chevron-up;
+}
+
+.glyphicon-chevron-down {
+    @extend .icon-chevron-down;
+}
+
+.bootstrap-timepicker-widget table td a i {
+    width: 11px;
+    height: 17px;
+    display: inline-block;
+}

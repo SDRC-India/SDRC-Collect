@@ -1,0 +1,21 @@
+<ion-view view-title="Get Blank Form">
+  <ion-content has-bouncing = "true" on-swipe-right="$root.swipeRight()">
+  <div class="list">
+    <div class="item item-checkbox item-checkbox-right" ng-repeat="item in items">
+      <label class="checkbox">
+        <input type="checkbox" ng-model="item.checked" 
+                      ng-checked="item.checked"
+                      ng-change="doCount({{$index}})">   
+        </label><h2><strong>{{item.name}}</strong></h2>
+        <span>ID : {{ item.id }}</span>
+    </div>
+  </div>
+  </ion-content>
+  <ion-footer-bar align-title="left">
+  <div class="button-bar">
+  <a class="button" ng-click="selectAllCheckBox()">Select All</a>
+  <a class="button" href="#/app/reloadGetblankForm">Refresh</a>
+  <a class="button" ng-disabled="isGsDisabled" ng-click="getSelectedForm()" href="#">Get Selected</a>
+</div>  	
+  </ion-footer-bar>
+</ion-view>

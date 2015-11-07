@@ -1,0 +1,434 @@
+$media-margin: 10px;
+
+/** hide stuff **/
+
+.or [lang]:not(.active), .or-option-translations, .or-appearance-page-break, .or-constraint-msg, .or-required-msg,
+.option-wrapper .itemset-template, .itemset-labels, .or-hint.or-form-print, .or-hint.or-form-print.active {
+    display: none;
+}
+
+.or, .or-group {
+    > h3 {
+        padding: 5px 0 15px 0;
+        word-wrap: break-word;
+        color: $brand-primary-color;
+        text-align: center;
+    }
+    > h4 {
+        text-align: inherit;
+        margin-top: 9px;
+        margin-bottom: 9px;
+        color: $brand-primary-color;
+        text-align: center;
+    }
+}
+
+.or.hide {
+    display: none;
+}
+
+/** hints **/
+.or-hint.active {
+    @include font-normal;
+    color: #888888;
+    display: block;
+    line-height: 16px;
+    font-weight: normal;
+    font-size: 11px;
+    font-style: italic;
+    padding-top: 5px;
+    ~ br {
+        display: none;
+    }
+}
+
+.or .form-logo {
+    display: block;
+    text-align: center;
+    width: 100%;
+    img {
+        float: none;
+        display: inline;
+        max-height: 200px;
+        max-width: 120px;
+    }
+}
+
+.or-repeat {
+    background-color: $repeat-bg;
+    margin: 0 0 3px 0;
+    padding: 20px 10px 10px 10px;
+    position: relative;
+    .repeat-number {
+        display: block;
+        position: absolute;
+        top: 7px;
+        right: 10px;
+        color: $brand-primary-color;
+        + .or-group {
+            border-top: none;
+        }
+    }
+    .or-repeat {
+        background-color: $question-bg;
+        .or-repeat {
+            background-color: $repeat-bg;
+            .or-repeat {
+                background-color: $question-bg;
+            }
+        }
+    }
+}
+
+.or-group {
+    border-top: $line;
+    margin: 1.5em 0 0.4em 0;
+    .or-group {
+        margin: 1.5em 0 0.5em 0;
+        h4 .active {
+            &::before {
+                content: "\00BB  ";
+            }
+            font-size: 80%;
+        }
+        .or-group {
+            h4 .active::before {
+                content: "\00BB  \00BB  ";
+            }
+            .or-group {
+                h4 .active::before {
+                    content: "\00BB  \00BB  \00BB  ";
+                }
+                .or-group {
+                    h4 .active::before {
+                        content: "\00BB  \00BB  \00BB  \00BB";
+                    }
+                    .or-group {
+                        h4 .active::before {
+                            content: "\00BB  \00BB  \00BB  \00BB  \00BB";
+                        }
+                        .or-group {
+                            h4 .active::before {
+                                content: "\00BB  \00BB  \00BB  \00BB  \00BB  \00BB";
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+#stats + .or-group, #or-preload-items + .or-group, #form-languages + .or-group {
+    border-top: none;
+}
+
+.question {
+    @include font-bold;
+    display: block;
+    margin: 0 0 9px 0;
+    padding-top: 15px;
+    border: none;
+    position: relative;
+    > fieldset {
+        padding: 0;
+        margin: 0;
+        border: none;
+    }
+}
+
+.question, .note {
+    > img, > video, > audio {
+        margin: $media-margin 0 $media-margin $media-margin;
+    }
+}
+
+.or[dir="rtl"] {
+    .question, .note {
+        > img, > video, > audio {
+            margin: $media-margin $media-margin $media-margin 0;
+        }
+    }
+}
+
+.note {
+    @include font-normal;
+    color: $note-color;
+    background: $note-bg;
+    border: $note-border;
+    border-radius: $note-border-radius;
+    display: block;
+    padding: 7px 12px;
+    margin: 15px 0;
+    input[readonly]:not([type=radio]):not([type=checkbox]) {
+        display: none;
+        &.has-value {
+            display: block;
+        }
+    }
+}
+
+.note:not(.disabled) + .note {
+    border-top: none;
+    border-bottom: none;
+    @include border-radius(0);
+    margin-top: -18px;
+    margin-bottom: 0;
+    & + .note {
+        margin-top: 0;
+    }
+    &.last-of-class {
+        border-bottom: $note-border;
+        border-bottom-left-radius: $note-border-radius;
+        border-bottom-right-radius: $note-border-radius;
+        // this becomes necessary if the note contains a floated element
+        margin-bottom: 18px;
+    }
+}
+
+label, legend, .note {
+    font-size: $font-size-base;
+}
+
+.or {
+    img, audio, video {
+        display: block;
+        max-height: 300px;
+        max-width: 70%;
+    }
+    video {
+        max-width: 100%;
+    }
+}
+
+legend {
+    display: block;
+    position: relative;
+    line-height: 12px;
+    border: none;
+    width: 100%;
+    padding: 0;
+    margin-bottom: 18px;
+    //works in Chrome
+    > span {
+        vertical-align: 12px;
+    }
+}
+
+//works in safari, some other webkit browsers
+.option-wrapper {
+    > label {
+        @include font-normal;
+        display: block;
+        margin: 0;
+        cursor: pointer;
+        padding: 4px 0 4px 0;
+        margin: 0 10px 1px 10px;
+        // TODO: remove hover rule for tables (in likert already done)
+        &:hover:not(.filler) {
+            background-color: $brand-secondary-color;
+        }
+        // clearfix with small adjustments to not mess up radio buttons.
+        &:before, &:after {
+            content: " ";
+            display: table;
+        }
+        &:after {
+            clear: both;
+        }
+    }
+    .option-label {
+        margin-left: 30px;
+        // input is floated to deal with multi-line labels
+        display: block;
+    }
+    img, video, audio {
+        float: right;
+        margin: $media-margin 0 $media-margin $media-margin;
+    }
+}
+
+.or[dir="rtl"] {
+    .option-wrapper {
+        .option-label {
+            margin-right: 30px;
+        }
+        img, video, audio {
+            float: left;
+            margin: $media-margin $media-margin $media-margin 0;
+        }
+    }
+}
+
+.touch {
+    .question.simple-select {
+        // touch radio buttons and checkboxes
+        .option-wrapper > label {
+            background-color: transparent;
+            border: 1px solid #ccc;
+            @include border-radius(4px);
+            width: auto;
+            margin: 0 0 6.4px 0;
+            padding: 10px 10px 10px 10px;
+            input[type="radio"], input[type="checkbox"] {
+                margin-top: 4px;
+                //slight variation between grid and fh theme for default radio/checkbox
+                margin-left: 5px;
+            }
+            &:focus, &:hover, &:active, &[data-checked] {
+                background-color: $brand-secondary-color;
+            }
+        }
+    }
+    input[type=text], input[type=password], input[type=url], input[type=email], input[type=file],  input[type=date], input[type=time], input[type=datetime], input[type=number], textarea, select {
+        //@include border-radius(2px);
+        margin: 10px 0 10px 0;
+        color: #104b66;
+    }
+    input[type=text], input[type=password], input[type=url], input[type=email], input[type=file],  input[type=date], input[type=time], input[type=datetime], input[type=number], textarea {
+        border: 1px solid #ddd8ce;
+    }
+    select {
+        width: 100%;
+    }
+}
+
+input[type=text], input[type=password], input[type=url], input[type=email], input[type=file],  input[type=date], input[type=time], input[type=datetime], input[type=number], textarea, select, .widget {
+    display: block;
+    margin: 8px 0 8px 0;
+}
+
+input:not([type="radio"]):not([type="checkbox"]), textarea {
+    height: $input-height;
+}
+
+select {
+    width: $input-max-width;
+}
+
+.question input, .note input {
+    &[type="text"],&[type="password"], &[type="url"], &[type="email"], &[type="file"] {
+        width: $input-max-width;
+    }
+    &[type="date"], &[type="number"], &[type="time"], &[type="datetime"] {
+        width: $input-min-width;
+    }
+    &[type="radio"], &[type=checkbox] {
+        // input is floated to deal with multi-line labels
+        float: left;
+        display: block;
+    }
+}
+
+.or[dir="rtl"] {
+    .question input, .note input {
+        &[type="radio"], &[type=checkbox] {
+            // input is floated to deal with multi-line labels
+            float: right;
+        }
+    }
+}
+
+.question textarea, .note textarea {
+    width: $input-max-width;
+    resize: vertical;
+    min-height: 9em;
+}
+
+.or-repeat {
+    .repeat-buttons {
+        margin-top: 30px;
+    }
+    .repeat {
+        margin-bottom: 0;
+    }
+    .remove {
+        float: right;
+        margin-bottom: 0;
+        margin-right: 0;
+    }
+}
+
+.or[dir="rtl"] {
+    .remove {
+        float: left;
+    }
+}
+
+.alert {
+    margin-bottom: 4px;
+}
+
+.required {
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    color: $brand-primary-color;
+}
+
+legend .required {
+    top: 0;
+}
+
+.or[dir="rtl"] {
+    .required {
+        left: auto;
+        right: -10px;
+    }
+}
+
+.required-subtle {
+    @include transition-slow;
+    float: right;
+    margin-top: 4px;
+    color: #e00e0e;
+    font-size: 0.8em;
+    @media screen and (max-width: 500px) {
+        font-size: 0.5em;
+    }
+}
+
+.or[dir="rtl"] .required-subtle {
+    float: left;
+}
+
+.focus .required-subtle {
+    @include transition-slow;
+    color: #333333;
+}
+
+.disabled {
+    opacity: 0.5;
+}
+
+.invalid-constraint, .invalid-required {
+    @include transition-fast;
+    background-color: $state-danger-bg;
+    border-color: $state-danger-border;
+    border-radius: $border-radius-small;
+    $pad: 10px;
+    margin-right: -$pad;
+    margin-left: -$pad;
+    padding-left: $pad;
+    padding-right: $pad;
+    padding-bottom: $pad;
+}
+
+.invalid-constraint .or-constraint-msg.active,
+.invalid-required .or-required-msg.active {
+    display: block;
+}
+
+.or-required-msg.active, .or-constraint-msg.active {
+    @include font-bold;
+    padding-top: 5px;
+    font-size: 0.85em;
+    color: $state-danger-text;
+}
+
+// this may have a very significant positive impact on performance
+.or-branch {
+    &.disabled, &.or-branch.pre-init {
+        display: none;
+    }
+}

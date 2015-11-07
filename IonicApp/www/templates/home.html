@@ -1,0 +1,81 @@
+<ion-view view-title="Home">
+  <ion-content has-bouncing = "true" on-swipe-right="$root.swipeRight()">
+  	<div class="home-head-div">
+  		<h4><strong>{{header}}</strong></h4>
+  		<p>{{paragraph}}</p>
+  	</div>
+  	<div class="row">
+  		<div class="col col-50 tac">
+  			<div class="row">
+  				<div class="col"></div>
+  				<div class="col col-80">
+  					<a href="#/app/fillForm"><img src="img/fill_blank_form.png"></a>
+
+  				</div>
+  				<div class="col"></div>
+  			</div>
+  			<p>Fill Form</p>
+  		</div>
+
+  		<div class="col tac">
+  			<div class="row">
+  				<div class="col"></div>
+  				<div class="col col-80">
+  					<img src="img/edit_saved_form.png">
+  				</div>
+  				<div class="col"></div>
+  			</div>
+  			<p>Edit Form</p>
+  		</div>  		
+  	</div>
+  	<div class="row">
+  		<div class="col col-50 tac">
+  			<div class="row">
+  				<div class="col"></div>
+  				<div class="col col-80">
+  					<img src="img/send_form.png">
+  				</div>
+  				<div class="col"></div>
+  			</div>
+  			<p>Send Form</p>
+  		</div>
+  		<div class="col tac">
+  			<div class="row">
+  				<div class="col"></div>
+  				<div class="col col-80">
+          <!-- <a href="#" onclick="window.open('http://180.87.230.91:8089/ODKAggregate/formList', '_system', 'location=yes'); return false;"><img src="img/get_blank_form.png">      
+      </a> -->
+  					<a href="#" ng-click="go()"><img src="img/get_blank_form.png"></a>
+
+  				</div>
+  				<div class="col"></div>
+  			</div>
+  			<p>Get form</p>
+  		</div>  		
+  	</div>
+  	<div class="row">
+  		<div class="col col-50 tac">
+  			<div class="row">
+  				<div class="col"></div>
+  				<div class="col col-80">
+  					<a href="#" onclick="window.open('http://180.87.230.91:8089/ODKAggregate/formList', '_system', 'location=yes'); return false;"><img src="img/delete_saved_form.png">      
+      </a>
+      <!-- <img src="img/delete_saved_form.png"> -->
+  				</div>
+  				<div class="col"></div>
+  			</div>
+  			<p>Delete form</p>
+  		</div>
+  		<div class="col tac">
+  			<div class="row">
+  				<div class="col"></div>
+  				<div class="col col-80">
+  					<img src="img/view_sent_form.png">
+  				</div>
+  				<div class="col"></div>
+  			</div>
+  			<p>View form</p>
+  		</div>  		
+  	</div>  	
+  </ion-content>
+</ion-view>

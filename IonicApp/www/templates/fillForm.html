@@ -1,0 +1,10 @@
+<ion-view view-title="Get Blank Form">
+  <ion-content has-bouncing = "true" on-swipe-right="$root.swipeRight()">
+  <div class="list">
+    <div class="item" ng-repeat="item in items" ng-click="getXformC({{$index}})">
+      <h2><strong>{{item.name}}</strong></h2>
+      <span>ID : {{ item.id }}</span>
+    </div>
+  </div>
+  </ion-content>
+</ion-view>

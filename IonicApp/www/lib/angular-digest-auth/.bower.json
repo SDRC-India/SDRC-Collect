@@ -1,0 +1,35 @@
+{
+  "name": "angular-digest-auth",
+  "version": "0.4.3",
+  "main": "./dist/angular-digest-auth.min.js",
+  "description": "AngularJS module to manage HTTP Digest Authentication",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/tafax/angular-digest-auth.git"
+  },
+  "dependencies": {
+    "angular-cookies": "*",
+    "angular-md5": "*",
+    "angular-state-machine": "*",
+    "angular": "*"
+  },
+  "devDependencies": {
+    "angular-mocks": "*"
+  },
+  "ignore": [
+    "node_modules",
+    "components",
+    "lib"
+  ],
+  "homepage": "https://github.com/tafax/angular-digest-auth",
+  "_release": "0.4.3",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.4.3",
+    "commit": "52e884001b7cf2a1a1fd419db531899a63c3f48b"
+  },
+  "_source": "git://github.com/tafax/angular-digest-auth.git",
+  "_target": "~0.4.3",
+  "_originalSource": "angular-digest-auth",
+  "_direct": true
+}
